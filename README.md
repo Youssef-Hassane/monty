@@ -2,7 +2,7 @@
 
 
 
-## Developers:
+## Developer:
 
 | **Youssef Hassane (AKA Almasy)** ||
 |---|---|
