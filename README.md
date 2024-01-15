@@ -36,6 +36,19 @@ line, and exit with the statUS EXIT_FAILURE
 - Format: see example
 - If the stack is empty, don’t print anything
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Developer:
 
 | **Youssef Hassane** | **AKA Almasy** |
