@@ -166,7 +166,7 @@ stack_t *allocate_new_node(int value)
 
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
-		exit(4); // Error code 4 indicates malloc failure
+		exit(4);
 	new_node->next = NULL;
 	new_node->prev = NULL;
 	new_node->n = value;
@@ -176,13 +176,17 @@ stack_t *allocate_new_node(int value)
 
 void push_to_stack(stack_t **node, __attribute__((unused)) unsigned int ln)
 {
-	stack_t *top;
+	stack_t *tmp;
 
-	if (!node || !*node)
+	if (node == NULL || *node == NULL)
 		exit(EXIT_FAILURE);
-
-	(*node)->next = head;
-	if (head)
-		head->prev = *node;
+	if (head == NULL)
+	{
+		head = *node;
+		return;
+	}
+	tmp = head;
 	head = *node;
+	head->next = tmp;
+	tmp->prev = head;
 }
