@@ -57,8 +57,8 @@ int select_Function(
 	if (operation && allTheFunctions[theIndex].codeOperation == NULL)
 	{
 		write(STDERR_FILENO, "L", 1);
-		write(STDERR_FILENO, operation, strlen(operation));
 		write(STDERR_FILENO, ": Unknown instruction\n", 21);
+		write(STDERR_FILENO, operation, strlen(operation));
 
 		fclose(theFile);
 		free(theBuffer);
