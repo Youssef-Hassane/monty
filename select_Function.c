@@ -25,11 +25,10 @@
  */
 
 int select_Function(
-	String theBuffer, stack_t **stack,
-	unsigned int theNumberOfTheLine, FILE *theFile)
+    String theBuffer, stack_t **stack,
+    unsigned int theNumberOfTheLine, FILE *theFile)
 {
-	unsigned int theIndex = 0;
-	String operation;
+
 	/* char errorBuffer[50]; */
 	/* int numChars; */
 
@@ -37,8 +36,10 @@ int select_Function(
 	    {"push", push_operation},
 	    {"pall", pall_operation},
 	    {"pint", pint_operation},
-	    {NULL, NULL}
-	};
+	    {NULL, NULL}};
+
+	unsigned int theIndex = 0;
+	String operation;
 
 	operation = strtok(theBuffer, " \n\t");
 
@@ -62,7 +63,7 @@ int select_Function(
 		/* theNumberOfTheLine, operation); */
 		/* write(STDERR_FILENO, errorBuffer, numChars); */
 		fprintf(stderr, "L%d: unknown instruction %s\n",
-		theNumberOfTheLine, operation);
+			  theNumberOfTheLine, operation);
 		fclose(theFile);
 		free(theBuffer);
 		release_stack(*stack);
