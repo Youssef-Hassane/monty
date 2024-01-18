@@ -18,10 +18,9 @@
 void swap_operation(stack_t **head, unsigned int theNumberOfTheLine)
 {
 	/* Declare a temporary pointer */
-	stack_t *temp;
+	stack_t *temporaryPointer;
 	/* Declare an error message buffer */
 	char errorMessage[50];
-
 	/* Check if the stack is empty or has only one element */
 	if (*head == NULL || (*head)->next == NULL)
 	{
@@ -34,11 +33,11 @@ void swap_operation(stack_t **head, unsigned int theNumberOfTheLine)
 		exit(EXIT_FAILURE);
 	}
 	/* Store the second node in temp */
-	temp = (*head)->next;
+	temporaryPointer = (*head)->next;
 	/* Link the first node to the third node */
-	(*head)->next = temp->next;
+	(*head)->next = temporaryPointer->next;
 	/* Place the first node after the second node */
-	temp->next = *head;
+	temporaryPointer->next = *head;
 	/* Update the head to the second node */
-	*head = temp;
+	*head = temporaryPointer;
 }
