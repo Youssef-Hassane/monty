@@ -39,13 +39,13 @@ int select_Function(
 	    {NULL, NULL}
 	};
 
-	operation = strtok(theBuffer, THE_DELIMITERS);
+	operation = strtok(theBuffer, " \n\t");
 
 	if (operation && operation[ZERO] == HASH)
 	{
 		return (ZERO);
 	}
-	montyExecutionContext.theArgument = strtok(NULL, THE_DELIMITERS);
+	montyExecutionContext.theArgument = strtok(NULL, " \n\t");
 
 	while (allTheFunctions[theIndex].codeOperation && operation)
 	{
