@@ -30,6 +30,8 @@ int select_Function(
 {
 	unsigned int theIndex = 0;
 	String operation;
+	char errorBuffer[50];
+	int numChars;
 
 	instruction_t allTheFunctions[] = {
 	    {"push", push_operation},
@@ -56,10 +58,9 @@ int select_Function(
 	}
 	if (operation && allTheFunctions[theIndex].codeOperation == NULL)
 	{
-		write(STDERR_FILENO, "L", 1);
-		write(STDERR_FILENO, ": Unknown instruction\n", 21);
-		write(STDERR_FILENO, operation, strlen(operation));
-
+		numChars = sprintf(errorBuffer, "L%d: unknown instruction %s\n",
+		theNumberOfTheLine, operation);
+		write(STDERR_FILENO, errorBuffer, numChars);
 		fclose(theFile);
 		free(theBuffer);
 		release_stack(*stack);
