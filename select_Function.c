@@ -49,7 +49,7 @@ int select_Function(
 
 	while (allTheFunctions[theIndex].codeOperation && operation)
 	{
-		if (strcmp(allTheFunctions[theIndex].codeOperation, operation) == ZERO)
+		if (strcmp(operation, allTheFunctions[theIndex].codeOperation) == ZERO)
 		{
 			allTheFunctions[theIndex].f(stack, theNumberOfTheLine);
 			return (ZERO);

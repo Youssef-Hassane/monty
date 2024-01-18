@@ -26,7 +26,8 @@ void AddNodeToQueue(stack_t **head, int ValueToBeAdded)
 	/* Check if memory allocation was successful */
 	if (newNode == NULL)
 	{
-		write(STDERR_FILENO, "Error\n", 6);
+		/* write(STDERR_FILENO, "Error\n", 6); */
+		printf("Error\n");
 	}
 	/* Set the value of the new node */
 	(*newNode).n = ValueToBeAdded;
