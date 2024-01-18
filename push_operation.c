@@ -19,11 +19,11 @@
 
 void push_operation(stack_t **head, unsigned int theNumberOfTheLine)
 {
-	char lineNumberString[12];
+	/* char lineNumberString[12]; */
 
 	Integer pushedValue;
 
-	sprintf(lineNumberString, "%u", theNumberOfTheLine);
+	/* sprintf(lineNumberString, "%u", theNumberOfTheLine); */
 
 	if (!montyExecutionContext.theArgument ||
 	!is_valid_integer(montyExecutionContext.theArgument))
@@ -61,14 +61,15 @@ void push_operation(stack_t **head, unsigned int theNumberOfTheLine)
 
 void handle_push_error(unsigned int theNumberOfTheLine, stack_t **head)
 {
-	char lineNumberString[12];
+	/* char lineNumberString[12]; */
 
-	sprintf(lineNumberString, "%u", theNumberOfTheLine);
+	/* sprintf(lineNumberString, "%u", theNumberOfTheLine); */
 
-	write(STDERR_FILENO, "L", 1);
-	write(STDERR_FILENO, lineNumberString, sizeof(lineNumberString) - 1);
-	write(STDERR_FILENO, ": usage: push integer\n", 22);
+	/* write(STDERR_FILENO, "L", 1); */
+	/* write(STDERR_FILENO, lineNumberString, sizeof(lineNumberString) - 1); */
+	/* write(STDERR_FILENO, ": usage: push integer\n", 22); */
 
+	fprintf(stderr, "L%d: usage: push integer\n", theNumberOfTheLine);
 	fclose(montyExecutionContext.theFile);
 	FREE_VARIABLE(montyExecutionContext.theBuffer);
 	release_stack(*head);
