@@ -40,6 +40,7 @@ int select_Function(
 	    {"pop", pop_operation},
 	    {"swap", swap_operation},
 	    {"add", add_operation},
+	    {"nop", nop_operation},
 	    {NULL, NULL}};
 
 	operation = strtok(theBuffer, THE_DELIMITERS);

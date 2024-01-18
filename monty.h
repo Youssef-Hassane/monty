@@ -107,6 +107,7 @@ void pint_operation(stack_t **head, unsigned int counter);
 void pop_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void swap_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void add_operation(stack_t **head, unsigned int theNumberOfTheLine);
+void nop_operation(stack_t **head, unsigned int theNumberOfTheLine);
 
 
 #endif
