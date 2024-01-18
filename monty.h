@@ -2,6 +2,7 @@
 #define MONTY_H
 
 
+
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -10,13 +11,19 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdio.h>
 
 typedef char *String;
 typedef char **StringArray;
 typedef int Integer;
 typedef unsigned long int ULI;
 
-#define THE_DELIMITERS " \t\n"
+#define THE_DELIMITERS "\n "
 #define READ "r"
 #define ZERO 0
 #define ONE 1
@@ -26,6 +33,13 @@ typedef unsigned long int ULI;
 #define STACK "stack"
 #define QUEUE "queue"
 #define HASH '#'
+#define NULL_VARIABLE(x) (x = NULL)
+#define FREE_VARIABLE(x) free(x)
+#define NULL_TERMINATOR '\0'
+#define DASH '-'
+
+
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -59,18 +73,37 @@ typedef struct instruction_s
 
 
 
+/**
+ * struct MontyContext - Variables
+ * @theArgument: Value associated with an instruction
+ * @theFile: File stream for Monty script
+ * @theBuffer: Buffer for storing a line from the Monty script file
+ * @theMode: Mode indicator, representing a certain behavior
+ * Description: Variables for stack, queues, LIFO, FIFO
+ */
+typedef struct MontyContext
+{
+	String theArgument;
+	FILE *theFile;
+	String theBuffer;
+	Integer theMode;
+}  MontyContext_t;
+
+extern MontyContext_t montyExecutionContext;
+
+int select_Function(
+	String theBuffer, stack_t **stack,
+	unsigned int theNumberOfTheLine, FILE *theFile
+);
+
+void release_stack(stack_t *top);
 
 
+void addNodeToStack(stack_t **head, int ValueToBeAdded);
+void push_operation(stack_t **head, unsigned int theNumberOfTheLine);
+void pall_operation(stack_t **head, unsigned int theNumberOfTheLine);
+void AddNodeToQueue(stack_t **head, int ValueToBeAdded);
+void handle_push_error(unsigned int lineNum, stack_t **head);
 
-
-void select_Function(
-	String codeOperation, String theToken,
-	Integer theNumberOfTheLine, Integer stackOrQueue);
-
-void push_to_stack(stack_t **new_node, __attribute__((unused))unsigned int ln);
-void display_stack_contents(stack_t **stack, unsigned int line_number);
-void release_stack(void);
-void enqueue(stack_t **new_node, __attribute__((unused))unsigned int ln);
-stack_t *allocate_new_node(int n);
-
+int is_valid_integer(const char *arg);
 #endif
