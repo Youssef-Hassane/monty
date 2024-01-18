@@ -27,8 +27,7 @@ void addNodeToStack(stack_t **head, int ValueToBeAdded)
 	if (newNode == NULL)
 	{
 		/* If malloc fails, write an error message to stderr and exit */
-		/* write(STDERR_FILENO, "Error\n", 6); */
-		printf("Error\n");
+		write(STDERR_FILENO, "Error\n", 6);
 		exit(ZERO);
 	}
 	/* If the stack is not empty, update the prev pointer of the current top */

@@ -17,44 +17,99 @@
  * By Youssef Hassane AKA Almasy
  */
 
-
-
 void push_operation(stack_t **head, unsigned int theNumberOfTheLine)
 {
-	Integer theValueToBePushed, characterIndex = 0, theMode = 0;
-	/* char lineNumStr[12]; */
-	/* sprintf(lineNumStr, "%u", theNumberOfTheLine); */
-	if (montyExecutionContext.theArgument)
+	char lineNumberString[12];
+
+	Integer pushedValue;
+
+	sprintf(lineNumberString, "%u", theNumberOfTheLine);
+
+	if (!montyExecutionContext.theArgument ||
+	    !is_valid_integer(montyExecutionContext.theArgument))
 	{
-		if (montyExecutionContext.theArgument[0] == DASH)
-			INCREASE_BY_ONE(characterIndex);
-		while (montyExecutionContext.theArgument[characterIndex] != NULL_TERMINATOR)
-		{
-			if (montyExecutionContext.theArgument[characterIndex] > 57 ||
-			    montyExecutionContext.theArgument[characterIndex] < 48)
-				theMode = 1;
-			INCREASE_BY_ONE(characterIndex);
-		}
-		if (theMode == 1)
-		{
-			fprintf(stderr, "L%d: usage: push integer\n", theNumberOfTheLine);
-			fclose(montyExecutionContext.theFile);
-			FREE_VARIABLE(montyExecutionContext.theBuffer);
-			release_stack(*head);
-			exit(EXIT_FAILURE);
-		}
+		handle_push_error(theNumberOfTheLine, head);
 	}
-	else
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", theNumberOfTheLine);
-		fclose(montyExecutionContext.theFile);
-		FREE_VARIABLE(montyExecutionContext.theBuffer);
-		release_stack(*head);
-		exit(EXIT_FAILURE);
-	}
-	theValueToBePushed = atoi(montyExecutionContext.theArgument);
+
+	pushedValue = atoi(montyExecutionContext.theArgument);
+
 	if (montyExecutionContext.theMode == 0)
-		addNodeToStack(head, theValueToBePushed);
+	{
+		addNodeToStack(head, pushedValue);
+	}
 	else
-		AddNodeToQueue(head, theValueToBePushed);
+	{
+		AddNodeToQueue(head, pushedValue);
+	}
+}
+
+/**
+ * handle_push_error - Prints an error message and exits.
+ * Return: None.
+ * --------------------------
+ * Prototype: void handle_push_error(
+ *    unsigned int theNumberOfTheLine, stack_t **head
+ *);
+ * --------------------------
+ * @theNumberOfTheLine: Current line number in the script file.
+ * @head: Pointer to the top of the stack.
+ * --------------------------
+ * Description: Prints an error message and exits.
+ * --------------------------
+ * By Youssef Hassane AKA Almasy
+ */
+
+void handle_push_error(unsigned int theNumberOfTheLine, stack_t **head)
+{
+	char lineNumberString[12];
+
+	sprintf(lineNumberString, "%u", theNumberOfTheLine);
+
+	write(STDERR_FILENO, "L", 1);
+	write(STDERR_FILENO, lineNumberString, sizeof(lineNumberString) - 1);
+	write(STDERR_FILENO, ": usage: push integer\n", 22);
+
+	fclose(montyExecutionContext.theFile);
+	FREE_VARIABLE(montyExecutionContext.theBuffer);
+	release_stack(*head);
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * is_valid_integer - Checks if the argument is a valid integer.
+ * Return: 1 if the argument is a valid integer, 0 otherwise.
+ * --------------------------
+ * Prototype: int is_valid_integer(const char *arg);
+ * --------------------------
+ * @theArgument: Argument to check.
+ * --------------------------
+ * Description: Checks if the argument is a valid integer.
+ * --------------------------
+ * By Youssef Hassane AKA Almasy
+ */
+
+int is_valid_integer(const char *theArgument)
+{
+	int index = 0;
+
+	if (!theArgument || *theArgument == NULL_TERMINATOR)
+	{
+		return (ZERO);
+	}
+
+	if (theArgument[ZERO] == '-')
+	{
+		index = 1;
+	}
+
+	while (theArgument[index] != NULL_TERMINATOR)
+	{
+		if (!isdigit(theArgument[index]))
+		{
+			return (ZERO);
+		}
+		INCREASE_BY_ONE(index);
+	}
+
+	return (ONE);
 }

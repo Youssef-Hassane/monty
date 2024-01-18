@@ -30,8 +30,8 @@ int select_Function(
 {
 	unsigned int theIndex = 0;
 	String operation;
-	/* char errorBuffer[50]; */
-	/* int numChars; */
+	char errorBuffer[50];
+	int numChars;
 
 	instruction_t allTheFunctions[] = {
 	    {"push", push_operation},
@@ -39,13 +39,13 @@ int select_Function(
 	    {"pint", pint_operation},
 	    {NULL, NULL}};
 
-	operation = strtok(theBuffer, " \n\t");
+	operation = strtok(theBuffer, THE_DELIMITERS);
 
 	if (operation && operation[ZERO] == HASH)
 	{
 		return (ZERO);
 	}
-	montyExecutionContext.theArgument = strtok(NULL, " \n\t");
+	montyExecutionContext.theArgument = strtok(NULL, THE_DELIMITERS);
 
 	while (allTheFunctions[theIndex].codeOperation && operation)
 	{
@@ -57,11 +57,10 @@ int select_Function(
 		INCREASE_BY_ONE(theIndex);
 	}
 	if (operation && allTheFunctions[theIndex].codeOperation == NULL)
-	{ /* numChars = sprintf(errorBuffer, "L%d: unknown instruction %s\n", */
-		/* theNumberOfTheLine, operation); */
-		/* write(STDERR_FILENO, errorBuffer, numChars); */
-		fprintf(stderr, "L%d: unknown instruction %s\n",
-			  theNumberOfTheLine, operation);
+	{
+		numChars = sprintf(errorBuffer, "L%d: unknown instruction %s\n",
+		theNumberOfTheLine, operation);
+		write(STDERR_FILENO, errorBuffer, numChars);
 		fclose(theFile);
 		free(theBuffer);
 		release_stack(*stack);

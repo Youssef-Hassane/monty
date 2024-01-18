@@ -33,8 +33,7 @@ Integer main(Integer argumentCounter, StringArray argumentVector)
 
 	if (argumentCounter != TWO)
 	{
-		/* write(STDERR_FILENO, "USAGE: monty file\n", 18); */
-		fprintf(stderr, "USAGE: monty file\n");
+		write(STDERR_FILENO, "USAGE: monty file\n", 18);
 		exit(EXIT_FAILURE);
 	}
 
@@ -42,10 +41,9 @@ Integer main(Integer argumentCounter, StringArray argumentVector)
 	montyExecutionContext.theFile = theFile;
 	if (!theFile)
 	{
-		/* write(STDERR_FILENO, "Error: Can't open file ", 23); */
-		/* write(STDERR_FILENO, argumentVector[ONE], strlen(argumentVector[ONE])); */
-		/* write(STDERR_FILENO, NEW_LINE, ONE); */
-		fprintf(stderr, "Error: Can't open file %s\n", argumentVector[1]);
+		write(STDERR_FILENO, "Error: Can't open file ", 23);
+		write(STDERR_FILENO, argumentVector[ONE], strlen(argumentVector[ONE]));
+		write(STDERR_FILENO, NEW_LINE, ONE);
 		exit(EXIT_FAILURE);
 	}
 
@@ -63,5 +61,5 @@ Integer main(Integer argumentCounter, StringArray argumentVector)
 	}
 	release_stack(stack);
 	fclose(theFile);
-	return (0);
+	return (ZERO);
 }
