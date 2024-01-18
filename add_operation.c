@@ -26,7 +26,8 @@ void add_operation(stack_t **head, unsigned int theNumberOfTheLine)
 	/* Check if the stack has less than two elements */
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		sprintf(errorMessage, "L%d: can't add, stack too short\n", theNumberOfTheLine);
+		sprintf(errorMessage, "L%d: can't add, stack too short\n",
+		theNumberOfTheLine);
 		write(STDERR_FILENO, errorMessage, strlen(errorMessage));
 		fclose(montyExecutionContext.theFile);
 		FREE_VARIABLE(montyExecutionContext.theBuffer);
