@@ -113,6 +113,7 @@ void mul_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void mod_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void pchar_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void pstr_operation(stack_t **head, unsigned int theNumberOfTheLine);
+void rotl_operation(stack_t **head, unsigned int theNumberOfTheLine);
 
 
 #endif
