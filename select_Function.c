@@ -57,10 +57,11 @@ int select_Function(
 		INCREASE_BY_ONE(theIndex);
 	}
 	if (operation && allTheFunctions[theIndex].codeOperation == NULL)
-	{
-		numChars = sprintf(errorBuffer, "L%d: unknown instruction %s\n",
+	{ /* numChars = sprintf(errorBuffer, "L%d: unknown instruction %s\n", */
+		/* theNumberOfTheLine, operation); */
+		/* write(STDERR_FILENO, errorBuffer, numChars); */
+		fprintf(stderr, "L%d: unknown instruction %s\n",
 		theNumberOfTheLine, operation);
-		write(STDERR_FILENO, errorBuffer, numChars);
 		fclose(theFile);
 		free(theBuffer);
 		release_stack(*stack);
