@@ -5,7 +5,6 @@
 /* Global variable to hold shared information */
 MontyContext_t montyExecutionContext = {NULL, NULL, NULL, 0};
 
-
 /**
  * main - Entry point of the Monty interpreter
  * Return: Always 0 (Success)
