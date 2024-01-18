@@ -22,8 +22,7 @@
 void push_operation(stack_t **head, unsigned int theNumberOfTheLine)
 {
 	Integer theValueToBePushed, characterIndex = 0, theMode = 0;
-	/* char lineNumStr[12]; */
-	/* sprintf(lineNumStr, "%u", theNumberOfTheLine); */
+
 	if (montyExecutionContext.theArgument)
 	{
 		if (montyExecutionContext.theArgument[0] == DASH)
