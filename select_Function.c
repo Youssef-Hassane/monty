@@ -46,6 +46,7 @@ int select_Function(
 	    {"mul", mul_operation},
 	    {"mod", mod_operation},
 	    {"pchar", pchar_operation},
+	    {"pstr", pstr_operation},
 	    {NULL, NULL}};
 
 	operation = strtok(theBuffer, THE_DELIMITERS);

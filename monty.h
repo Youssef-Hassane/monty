@@ -11,12 +11,11 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdio.h>
+
+
+
+
+
 
 typedef char *String;
 typedef char **StringArray;
@@ -113,7 +112,7 @@ void div_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void mul_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void mod_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void pchar_operation(stack_t **head, unsigned int theNumberOfTheLine);
-
+void pstr_operation(stack_t **head, unsigned int theNumberOfTheLine);
 
 
 #endif
