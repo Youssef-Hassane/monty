@@ -17,15 +17,28 @@
 
 void swap_operation(stack_t **head, unsigned int theNumberOfTheLine)
 {
+	/* Declare a temporary pointer */
 	stack_t *temp;
+	/* Declare an error message buffer */
+	char errorMessage[50];
 
+	/* Check if the stack is empty or has only one element */
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short\n", theNumberOfTheLine);
+		/* Format the error message */
+		sprintf(errorMessage, "L%u: can't swap, stack too short\n",
+		theNumberOfTheLine);
+		/* Write the error message to stderr */
+		write(STDERR_FILENO, errorMessage, strlen(errorMessage));
+		/* Exit with failure status */
 		exit(EXIT_FAILURE);
 	}
+	/* Store the second node in temp */
 	temp = (*head)->next;
+	/* Link the first node to the third node */
 	(*head)->next = temp->next;
+	/* Place the first node after the second node */
 	temp->next = *head;
+	/* Update the head to the second node */
 	*head = temp;
 }
