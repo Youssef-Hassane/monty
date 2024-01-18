@@ -37,7 +37,7 @@ typedef unsigned long int ULI;
 #define FREE_VARIABLE(x) free(x)
 #define NULL_TERMINATOR '\0'
 #define DASH '-'
-
+#define unused(x) (void)(x)
 
 
 
