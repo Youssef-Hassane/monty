@@ -105,6 +105,7 @@ void pall_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void AddNodeToQueue(stack_t **head, int ValueToBeAdded);
 void pint_operation(stack_t **head, unsigned int counter);
 void pop_operation(stack_t **head, unsigned int theNumberOfTheLine);
+void swap_operation(stack_t **head, unsigned int theNumberOfTheLine);
 
 
 

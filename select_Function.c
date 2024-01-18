@@ -38,6 +38,7 @@ int select_Function(
 	    {"pall", pall_operation},
 	    {"pint", pint_operation},
 	    {"pop", pop_operation},
+	    {"swap", swap_operation},
 	    {NULL, NULL}};
 
 	operation = strtok(theBuffer, THE_DELIMITERS);
