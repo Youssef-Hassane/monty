@@ -44,6 +44,7 @@ int select_Function(
 	    {"sub", sub_operation},
 	    {"div", div_operation},
 	    {"mul", mul_operation},
+	    {"mod", mod_operation},
 	    {NULL, NULL}};
 
 	operation = strtok(theBuffer, THE_DELIMITERS);

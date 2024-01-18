@@ -111,6 +111,8 @@ void nop_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void sub_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void div_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void mul_operation(stack_t **head, unsigned int theNumberOfTheLine);
+void mod_operation(stack_t **head, unsigned int theNumberOfTheLine);
+
 
 
 
