@@ -69,7 +69,6 @@ void handle_push_error(unsigned int theNumberOfTheLine, stack_t **head)
 	write(STDERR_FILENO, lineNumberString, sizeof(lineNumberString) - 1);
 	write(STDERR_FILENO, ": usage: push integer\n", 22);
 
-	
 	fclose(montyExecutionContext.theFile);
 	FREE_VARIABLE(montyExecutionContext.theBuffer);
 	release_stack(*head);
