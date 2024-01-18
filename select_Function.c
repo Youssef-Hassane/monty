@@ -35,7 +35,8 @@ int select_Function(
 
 	instruction_t allTheFunctions[] = {
 	    {"push", push_operation},
-	    {"pall", pall_operation}, /* Task 0 (push & pall) */
+	    {"pall", pall_operation},
+	    {"pint", pint_operation},
 	    {NULL, NULL}
 	};
 

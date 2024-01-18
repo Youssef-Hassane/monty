@@ -104,6 +104,7 @@ void push_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void pall_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void AddNodeToQueue(stack_t **head, int ValueToBeAdded);
 void handle_push_error(unsigned int lineNum, stack_t **head);
+void pint_operation(stack_t **head, unsigned int counter);
 
 int is_valid_integer(const char *arg);
 #endif

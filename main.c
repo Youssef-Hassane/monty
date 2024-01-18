@@ -27,7 +27,7 @@ Integer main(Integer argumentCounter, StringArray argumentVector)
 {
 	FILE *theFile;
 	String theBuffer;
-	ULI theSizeOfTheBuffer;
+	ULI theSizeOfTheBuffer = 0;
 	ssize_t get_line = 1;
 	unsigned int theNumberOfTheLine = 0;
 	stack_t *stack = NULL;
