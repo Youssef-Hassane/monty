@@ -49,6 +49,7 @@ int select_Function(
 	    {"pstr", pstr_operation},
 	    {"rotl", rotl_operation},
 	    {"rotr", rotr_operation},
+	    {"queue", queue_operation},
 	    {NULL, NULL}};
 
 	operation = strtok(theBuffer, THE_DELIMITERS);
