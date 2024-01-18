@@ -17,8 +17,8 @@
 void pall_operation(stack_t **head, unsigned int theNumberOfTheLine)
 {
 	/* Traverse the stack and write each element to standard output */
-	char buffer[12];
-	int numDigits;
+	/* char buffer[12]; */
+	/* int numDigits; */
 	/* Declare a pointer to the top of the stack */
 	stack_t *pointerToTheTop;
 	/* Suppress compiler warning about an unused variable */
@@ -33,8 +33,9 @@ void pall_operation(stack_t **head, unsigned int theNumberOfTheLine)
 	}
 	while (pointerToTheTop)
 	{
-		numDigits = sprintf(buffer, "%d\n", pointerToTheTop->n);
-		write(STDOUT_FILENO, buffer, numDigits);
+		/* numDigits = sprintf(buffer, "%d\n", pointerToTheTop->n); */
+		/* write(STDOUT_FILENO, buffer, numDigits); */
+		printf("%d\n", pointerToTheTop->n);
 		pointerToTheTop = pointerToTheTop->next;
 	}
 }
