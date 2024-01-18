@@ -30,8 +30,8 @@ int select_Function(
 {
 	unsigned int theIndex = 0;
 	String operation;
-	char errorBuffer[50];
-	int numChars;
+	/* char errorBuffer[50]; */
+	/* int numChars; */
 
 	instruction_t allTheFunctions[] = {
 	    {"push", push_operation},
