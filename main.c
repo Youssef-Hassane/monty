@@ -1,7 +1,6 @@
 #define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
-
-
 /* You allowed to use a maximum of one global variable */
 /* Global variable to hold shared information */
 MontyContext_t montyExecutionContext = {NULL, NULL, NULL, 0};
@@ -40,6 +39,7 @@ Integer main(Integer argumentCounter, StringArray argumentVector)
 	}
 
 	theFile = fopen(argumentVector[ONE], READ);
+	montyExecutionContext.theFile = theFile;
 	if (!theFile)
 	{
 		/* write(STDERR_FILENO, "Error: Can't open file ", 23); */

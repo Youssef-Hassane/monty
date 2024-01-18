@@ -25,10 +25,11 @@
  */
 
 int select_Function(
-    String theBuffer, stack_t **stack,
-    unsigned int theNumberOfTheLine, FILE *theFile)
+	String theBuffer, stack_t **stack,
+	unsigned int theNumberOfTheLine, FILE *theFile)
 {
-
+	unsigned int theIndex = 0;
+	String operation;
 	/* char errorBuffer[50]; */
 	/* int numChars; */
 
@@ -37,9 +38,6 @@ int select_Function(
 	    {"pall", pall_operation},
 	    {"pint", pint_operation},
 	    {NULL, NULL}};
-
-	unsigned int theIndex = 0;
-	String operation;
 
 	operation = strtok(theBuffer, " \n\t");
 
