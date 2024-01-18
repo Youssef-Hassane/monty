@@ -41,9 +41,10 @@ Integer main(Integer argumentCounter, StringArray argumentVector)
 	theFile = fopen(argumentVector[ONE], READ);
 	if (!theFile)
 	{
-		write(STDERR_FILENO, "Error: Can't open file ", 23);
-		write(STDERR_FILENO, argumentVector[ONE], strlen(argumentVector[ONE]));
-		write(STDERR_FILENO, NEW_LINE, ONE);
+		/* write(STDERR_FILENO, "Error: Can't open file ", 23); */
+		/* write(STDERR_FILENO, argumentVector[ONE], strlen(argumentVector[ONE])); */
+		/* write(STDERR_FILENO, NEW_LINE, ONE); */
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
