@@ -18,17 +18,17 @@
 void pop_operation(stack_t **head, unsigned int theNumberOfTheLine)
 {
 	/* Declare a character array to hold the error message */
-	char error_message[100];
+	char errorMessage[100];
 	/* Declare a pointer to the top of the stack */
 	stack_t *pointerToTop;
 	/* Check if the stack is empty */
 	if (*head == NULL)
 	{
 		/* Format the error message with the line number */
-		sprintf(error_message, "L%u: can't pop an empty stack\n",
+		sprintf(errorMessage, "L%u: can't pop an empty stack\n",
 		theNumberOfTheLine);
 		/* Write the error message to the standard error file descriptor */
-		write(STDERR_FILENO, error_message, strlen(error_message));
+		write(STDERR_FILENO, errorMessage, strlen(errorMessage));
 		/* Close the file associated with the Monty execution context */
 		fclose(montyExecutionContext.theFile);
 		/* Free the buffer used to store the script file contents */
