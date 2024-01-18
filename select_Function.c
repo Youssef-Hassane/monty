@@ -50,6 +50,7 @@ int select_Function(
 	    {"rotl", rotl_operation},
 	    {"rotr", rotr_operation},
 	    {"queue", queue_operation},
+	    {"stack", stack_operation},
 	    {NULL, NULL}};
 
 	operation = strtok(theBuffer, THE_DELIMITERS);
