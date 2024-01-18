@@ -16,10 +16,10 @@
 
 void stack_operation(stack_t **head, unsigned int theNumberOfTheLine)
 {
-	/* Cast the head pointer to void to suppress unused variable warning */
+	/* Cast the head and theNumberOfTheLine as unused s*/
+	/* to avoid compilation warnings */
 	(void)head;
-	/* Cast theNumberOfTheLine to void to suppress unused variable warning */
 	(void)theNumberOfTheLine;
-	/* Set the execution mode to stack (LIFO) */
+	/* Set the mode of the execution context to STACK (0 indicates stack mode) */
 	montyExecutionContext.theMode = 0;
 }
