@@ -16,5 +16,10 @@
 
 void stack_operation(stack_t **head, unsigned int theNumberOfTheLine)
 {
-	addNodeToStack(head, theNumberOfTheLine);
+	/* Cast the head pointer to void to suppress unused variable warning */
+	(void)head;
+	/* Cast theNumberOfTheLine to void to suppress unused variable warning */
+	(void)theNumberOfTheLine;
+	/* Set the execution mode to stack (LIFO) */
+	montyExecutionContext.theMode = 0;
 }

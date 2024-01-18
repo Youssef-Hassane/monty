@@ -16,6 +16,6 @@
 
 void queue_operation(stack_t **head, unsigned int theNumberOfTheLine)
 {
-	AddNodeToQueue(head, theNumberOfTheLine);
+
 }
 
