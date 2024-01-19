@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "../monty.h"
 
 /**
  * div_operation - Handles the "div" operation.

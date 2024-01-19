@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "../monty.h"
 
 /**
  * pint_operation - Handles the "pint" operation.

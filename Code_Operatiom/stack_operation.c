@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "../monty.h"
 
 /**
  * stack_operation - Handles the "stack" operation.

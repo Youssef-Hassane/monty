@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "../monty.h"
 
 /**
  * release_stack - Frees the memory allocated to the stack

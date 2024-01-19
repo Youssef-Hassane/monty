@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "../monty.h"
 
 /**
  * pall_operation - Handles the "pall" operation.

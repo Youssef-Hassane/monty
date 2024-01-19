@@ -1,0 +1,26 @@
+#include "monty.h"
+
+#include "Free/release_stack.c"
+
+#include "Code_Operatiom/add_operation.c"
+#include "Code_Operatiom/div_operation.c"
+#include "Code_Operatiom/mod_operation.c"
+#include "Code_Operatiom/mul_operation.c"
+#include "Code_Operatiom/nop_operation.c"
+#include "Code_Operatiom/pall_operation.c"
+#include "Code_Operatiom/pchar_operation.c"
+#include "Code_Operatiom/pint_operation.c"
+#include "Code_Operatiom/pop_operation.c"
+#include "Code_Operatiom/pstr_operation.c"
+#include "Code_Operatiom/push_operation.c"
+#include "Code_Operatiom/queue_operation.c"
+#include "Code_Operatiom/rotl_operation.c"
+#include "Code_Operatiom/rotr_operation.c"
+#include "Code_Operatiom/stack_operation.c"
+#include "Code_Operatiom/sub_operation.c"
+#include "Code_Operatiom/swap_operation.c"
+
+#include "Add/AddNodeToQueue.c"
+#include "Add/addToNode.c"
+
+#include "Select_Function/select_Function.c"

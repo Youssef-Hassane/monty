@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "../monty.h"
 
 /**
  * AddNodeToQueue - Adds a node to the queue.

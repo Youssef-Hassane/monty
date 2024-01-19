@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "../monty.h"
 
 /**
  * rotr_operation - Handles the "rotr" operation.
