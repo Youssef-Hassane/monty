@@ -34,33 +34,20 @@ int select_Function(
 	int numChars;
 
 	instruction_t allTheFunctions[] = {
-	    {"push", push_operation},
-	    {"pall", pall_operation},
-	    {"pint", pint_operation},
-	    {"pop", pop_operation},
-	    {"swap", swap_operation},
-	    {"add", add_operation},
-	    {"nop", nop_operation},
-	    {"sub", sub_operation},
-	    {"div", div_operation},
-	    {"mul", mul_operation},
-	    {"mod", mod_operation},
-	    {"pchar", pchar_operation},
-	    {"pstr", pstr_operation},
-	    {"rotl", rotl_operation},
-	    {"rotr", rotr_operation},
-	    {"queue", queue_operation},
-	    {"stack", stack_operation},
-	    {NULL, NULL}};
-
+	    {"push", push_operation}, {"pall", pall_operation},
+	    {"pint", pint_operation}, {"pop", pop_operation},
+	    {"swap", swap_operation}, {"add", add_operation},
+	    {"nop", nop_operation}, {"sub", sub_operation},
+	    {"div", div_operation}, {"mul", mul_operation},
+	    {"mod", mod_operation}, {"pchar", pchar_operation},
+	    {"pstr", pstr_operation}, {"rotl", rotl_operation},
+	    {"rotr", rotr_operation}, {"queue", queue_operation},
+	    {"stack", stack_operation}, {NULL, NULL}
+	};
 	operation = strtok(theBuffer, THE_DELIMITERS);
-
 	if (operation && operation[ZERO] == HASH)
-	{
 		return (ZERO);
-	}
 	montyExecutionContext.theArgument = strtok(NULL, THE_DELIMITERS);
-
 	while (allTheFunctions[theIndex].codeOperation && operation)
 	{
 		if (strcmp(operation, allTheFunctions[theIndex].codeOperation) == ZERO)
