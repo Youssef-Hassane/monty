@@ -1,8 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-
-
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -10,12 +8,6 @@
 #include <ctype.h>
 #include <stdarg.h>
 #include <unistd.h>
-
-
-
-
-
-
 
 typedef char *String;
 typedef char **StringArray;
@@ -37,8 +29,6 @@ typedef unsigned long int ULI;
 #define NULL_TERMINATOR '\0'
 #define DASH '-'
 #define unused(x) (void)(x)
-
-
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -70,8 +60,6 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
-
 /**
  * struct MontyContext - Variables
  * @theArgument: Value associated with an instruction
@@ -96,8 +84,6 @@ int select_Function(
 );
 
 void release_stack(stack_t *top);
-
-
 void addNodeToStack(stack_t **head, int ValueToBeAdded);
 void push_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void pall_operation(stack_t **head, unsigned int theNumberOfTheLine);
@@ -117,6 +103,5 @@ void rotl_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void rotr_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void queue_operation(stack_t **head, unsigned int theNumberOfTheLine);
 void stack_operation(stack_t **head, unsigned int theNumberOfTheLine);
-
 
 #endif
